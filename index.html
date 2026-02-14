@@ -1148,8 +1148,11 @@
                         <a href="${item.link}" target="_blank" style="text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.95rem; display:block; margin-bottom: 5px;">${item.title}</a>
                         <div style="font-size:0.85rem; color:var(--text); opacity:0.8; line-height:1.4;">${item.description ? item.description.replace(/<[^>]*>?/gm, '').substring(0, 100) + '...' : ''}</div>
                     </div>
-                    </div>`;
-                });
+                        </div>
+                    </div>
+                `;
+            }
+        });
                 container.innerHTML = html;
             } else { container.innerHTML = '<div style="color:var(--danger)">Haberler alınamadı. Bağlantınızı kontrol edin.</div>'; }
         })
@@ -1339,6 +1342,7 @@
 </script>
 </body>
 </html>
+
 
 
 
