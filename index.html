@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PuantajXL | Yönetim Sistemi</title>
+    <title>PuantajXL Sidelya sürüm| Yönetim Sistemi</title>
     <style>
         :root {
             --bg: #f0f2f5; 
@@ -546,7 +546,7 @@
                 <input type="number" id="set_gecmis_sinir" min="1" max="50">
             </div>
             <div class="ayar-kart">
-                <label>Sistem Net Asgari Ücret (TL) <span class="tooltip-container"><span class="tooltip-icon">?</span><span class="tooltip-text">Varsayılan asgari ücret tutarı. 2025 için 17.002 TL olarak ayarlı.</span></span></label>
+                <label>Sistem Net Asgari Ücret (TL) <span class="tooltip-container"><span class="tooltip-icon">?</span><span class="tooltip-text">Varsayılan asgari ücret tutarı. 2026 için 28.075,50 TL olarak ayarlı.</span></span></label>
                 <input type="text" id="set_asgari" oninput="formatInput(this)">
             </div>
             <div class="ayar-kart">
@@ -1121,8 +1121,8 @@
     }
 
     /* --- MAAŞ HESAPLAMA LOGIC --- */
-    // Varsayılan Asgari Ücreti 2025 net tutarına (18.002,12 TL) güncelledim.
-    let ASGARI_UCRET = localStorage.getItem('kayitliAsgari') ? parseFloat(localStorage.getItem('kayitliAsgari')) : 18002.12;
+    // Varsayılan Asgari Ücreti 2025 net tutarına (28.075,50 TL) güncelledim.
+    let ASGARI_UCRET = localStorage.getItem('kayitliAsgari') ? parseFloat(localStorage.getItem('kayitliAsgari')) : 28075.50;
     let KAT_HICI = localStorage.getItem('katHici') ? parseFloat(localStorage.getItem('katHici')) : 1.5;
     let KAT_PAZAR = localStorage.getItem('katPazar') ? parseFloat(localStorage.getItem('katPazar')) : 2.0;
     let KAT_BAYRAM = localStorage.getItem('katBayram') ? parseFloat(localStorage.getItem('katBayram')) : 2.0;
@@ -1338,6 +1338,7 @@
 </script>
 </body>
 </html>
+
 
 
 
