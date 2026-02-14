@@ -298,14 +298,86 @@
         .data-table th, .data-table td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
         .data-table th { color: var(--primary); }
 
-        /* --- MOBILE RESPONSIVE --- */
-        @media (max-width: 768px) { 
-            .input-row { grid-template-columns: 1fr !important; gap: 12px; } 
-            .input-row textarea { grid-column: span 1 !important; }
-            .app-header { flex-direction: column; gap: 10px; }
-            .nav-tabs { width: 100%; justify-content: flex-start; }
-            .header-actions { width: 100%; justify-content: space-between; }
-        }
+        /* --- MOBİL İYİLEŞTİRMELERİ (Bunu style etiketinin en altına ekle) --- */
+
+@media (max-width: 768px) { 
+    /* Genel Konteyner Ayarları */
+    .module-container {
+        padding: 10px !important; /* Kenar boşluklarını azalttım */
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Header (Üst Bar) Düzenlemesi */
+    .app-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    .brand-logo { font-size: 1.2rem; }
+    .nav-tabs { 
+        width: 100%; 
+        justify-content: space-between; /* Butonları yay */
+        gap: 2px;
+    }
+    .nav-btn {
+        padding: 8px 10px; /* Buton iç boşluğunu küçülttüm */
+        font-size: 0.8rem;
+        flex: 1; /* Hepsi eşit genişlikte olsun */
+        text-align: center;
+    }
+
+    /* Banner ve İstatistikler */
+    .header-banner {
+        padding: 15px !important;
+        flex-direction: column; /* Mobilde alt alta olsun */
+        text-align: center;
+        gap: 10px;
+    }
+    .header-banner > div { text-align: center !important; }
+    .header-banner #weather-info { font-size: 1.4rem !important; }
+    
+    /* İstatistik Kartları (Puantaj Özeti) */
+    .stats-bar {
+        /* 130px çok fazlaydı, 90px'e çektim ki yan yana 3 tane sığsın */
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important; 
+        gap: 8px;
+    }
+    .stat-item { padding: 10px; }
+    .stat-item b { font-size: 1.1rem; }
+    .stat-item small { font-size: 0.6rem; }
+
+    /* Form Alanları */
+    .glass-card { padding: 15px; }
+    .input-row { 
+        grid-template-columns: 1fr !important; 
+        gap: 10px; 
+    } 
+    .input-row textarea { grid-column: span 1 !important; }
+    
+    /* Butonlar */
+    .btn-row { flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+
+    /* Maaş Hesaplama & Hesap Makinesi */
+    .maas-card-main { padding: 15px; }
+    .calc-grid { gap: 5px; }
+    .calc-btn { padding: 10px; font-size: 14px; }
+    .mesai-grup { grid-template-columns: 1fr; } /* Mesai alanlarını alt alta al */
+    
+    /* Font Boyutlarını Ehlileştirme */
+    h1 { font-size: 1.5rem !important; }
+    h2 { font-size: 1.3rem !important; }
+    h3 { font-size: 1.1rem !important; }
+    input, select, textarea { padding: 10px; font-size: 13px; }
+}
+
+/* Çok Küçük Ekranlar (iPhone SE vb.) için Ekstra Ayar */
+@media (max-width: 380px) {
+    .nav-btn { font-size: 0.7rem; padding: 6px; }
+    .stats-bar { grid-template-columns: 1fr 1fr !important; } /* En küçükte 2'li olsun */
+}
+
     </style>
 </head>
 <body>
@@ -1267,3 +1339,4 @@
 </script>
 </body>
 </html>
+
