@@ -377,15 +377,97 @@
     .nav-btn { font-size: 0.7rem; padding: 6px; }
     .stats-bar { grid-template-columns: 1fr 1fr !important; } /* En küçükte 2'li olsun */
 }
+/* --- PuantajXL & Sidelya Dinamik Logo --- */
+.brand-area {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
 
+.logo-box {
+    padding: 8px 16px;
+    background: var(--card); /* Temaya göre değişen arka plan */
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.main-title {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* PuantajXL: Gündüz gri/siyah, Gece gümüş/beyaz */
+.puantaj-part {
+    background: linear-gradient(
+        120deg, 
+        #333 20%, 
+        #888 40%, 
+        #aaa 60%, 
+        #333 80%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+}
+
+/* Dark mode'da PuantajXL daha parlak olsun */
+.dark-mode .puantaj-part {
+    background: linear-gradient(
+        120deg, 
+        #888 20%, 
+        #fff 40%, 
+        #fff 60%, 
+        #888 80%
+    );
+    -webkit-background-clip: text;
+    background-size: 200% auto;
+}
+
+/* Sidelya: Mor/Pembe Neon (Her iki modda da çalışır) */
+.sidelya-part {
+    background: linear-gradient(
+        120deg, 
+        #7928ca 20%, 
+        #ff0080 40%, 
+        #ff0080 60%, 
+        #7928ca 80%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(255, 0, 128, 0.2));
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
+}
+
+/* Eski logo class'ını devre dışı bırak */
+.brand-logo { display: none !important; }
+                
     </style>
 </head>
 <body>
 
 <div class="app-header">
     <div class="brand-area">
-        <div class="brand-logo">PuantajXL - Sidelya</div>
+    <div class="logo-box">
+        <h1 class="main-title">
+            <span class="puantaj-part">PuantajXL</span>
+            <span class="sidelya-part">Sidelya</span>
+        </h1>
     </div>
+</div>
     <div class="nav-tabs">
     <button class="nav-btn active" onclick="switchModule('puantaj', this)">📋 Puantaj</button>
     <button class="nav-btn" onclick="switchModule('maas', this)">💰 Maaş Hesaplama</button>
@@ -1338,6 +1420,7 @@
 </script>
 </body>
 </html>
+
 
 
 
